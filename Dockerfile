@@ -70,8 +70,7 @@ RUN docker-php-ext-configure \
     redis \
     ssh2
 
-RUN curl -sS https://getcomposer.org/installer | \
-  php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.1.9
 
 COPY conf/php.ini $PHP_INI_DIR
 COPY conf/php-fpm.conf /usr/local/etc/
